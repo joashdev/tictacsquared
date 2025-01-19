@@ -1,8 +1,13 @@
 <template>
-  <div class="w-dvw min-h-screen flex flex-col bg-slate-100">
+  <div class="w-dvw min-h-screen flex flex-col md:flex-row bg-slate-200 font-poppins">
+    <div class="statsContainer w-full md:w-1/3 p-1">
+      <div class="w-full h-full">
+        (tictac^2)
+      </div>
 
-    <div class="gameContainer w-full h-full m-auto">
-      <div class="w-1/2 m-auto grid grid-cols-3 gap-2 p-1 aspect-square relative">
+    </div>
+    <div class="gameContainer w-full md:w-2/3 h-full m-auto">
+      <div class="w-1/2 md:w-4/5 m-auto grid grid-cols-3 gap-4 p-1 relative">
         <div v-if="winnerState !== null" class="absolute text-center items- w-full h-full bg-white z-10 opacity-70">
           <div class="flex flex-col items-center justify-center w-full h-full">
             Winner Player {{playerState}}
@@ -10,10 +15,10 @@
             <button @click="continueGame">Continue</button>
           </div>
         </div>
-        <div v-for="(item, index) in gridState" class="relative grid grid-cols-3 grid-flow-row gap-1">
+        <div v-for="(item, index) in gridState" class="relative grid grid-cols-3 grid-flow-row gap-1 bg-white">
             <div v-if="activeGridState !== null && index !== activeGridState" class="absolute text-center w-full h-full bg-white opacity-20">{{index}}</div>
-            <div class="w-full h-full" v-for="(value, valueIndex) in item">
-              <button class="w-full h-full" :class="value === 'X' ? 'bg-blue-500' : value === 'O' ? 'bg-green-500' : 'bg-slate-500'" @click="setTile(index, valueIndex)">
+            <div class="w-full h-full aspect-square" v-for="(value, valueIndex) in item">
+              <button class="w-full h-full text-4xl" :class="value === 'X' ? 'bg-blue-500' : value === 'O' ? 'bg-green-500' : 'bg-slate-500'" @click="setTile(index, valueIndex)">
                 {{value !== "_" ? value : ""}}
               </button>
           </div>
