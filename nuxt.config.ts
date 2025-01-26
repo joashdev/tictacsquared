@@ -8,7 +8,7 @@ export default defineNuxtConfig({
             theme: {
                 extend: {
                     fontFamily: {
-                        poppins: ["Poppins", "sans-serif"],
+                        tw: ["Walter Turncoat", "Poppins", "sans-serif"],
                     }
                 },
             }
@@ -19,6 +19,7 @@ export default defineNuxtConfig({
             weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
         },
         families: [
+            {name: 'Walter Turncoat', provider: 'google', global: true},
             {name: 'Poppins', provider: 'google', global: true},
         ],
         experimental: {
