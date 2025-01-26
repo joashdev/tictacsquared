@@ -87,6 +87,9 @@
 </template>
 
 <script setup>
+useHead({
+  title: "tictacsquared"
+})
 const gridState = useState('gridState', () => [
   ["_", "_", "_", "_", "_", "_", "_", "_", "_"],
   ["_", "_", "_", "_", "_", "_", "_", "_", "_"],
